@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\TravelAssist.Core\TravelAssist.Core.csproj" />
+    <ProjectReference Include="..\TravelAssist.Data\TravelAssist.Data.csproj" />
+  </ItemGroup>
+
 </Project>
