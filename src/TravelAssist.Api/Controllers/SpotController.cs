@@ -42,7 +42,7 @@ namespace TravelAssist.Api.Controllers
         {
             try
             {
-                var imagePath = await SaveImage(spot.Image);
+                var imagePath =  SaveImage(spot.Image);
 
                 var spotToSave = new Spot()
                 {
@@ -62,20 +62,19 @@ namespace TravelAssist.Api.Controllers
         }
 
 
-        private async Task<string> SaveImage(IFormFile image)
+        private string SaveImage(IFormFile image)
         {
             try
             {
-                string imageName =
-                    new string(Path.GetFileNameWithoutExtension(image.FileName).Take(10).ToArray()).Replace(' ', '-');
+                string imageName = new string(Path.GetFileNameWithoutExtension(image.FileName).Take(10).ToArray()).Replace(' ', '-');
                 imageName = imageName + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(image.FileName);
                 var imagepath = Path.Combine(_webHostb.ContentRootPath, "Images", imageName);
                 using (var file = new FileStream(imagepath, FileMode.Create))
                 {
-                    await image.CopyToAsync(file);
+                    image.CopyTo(file);
                 }
 
-                return imagepath;
+                return imageName;
             }
             catch (Exception ex)
             {
