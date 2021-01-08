@@ -14,11 +14,12 @@ namespace TravelAssist.Data.Repository
         private TravelDbContext dbContext { get { return Context as TravelDbContext; } }
 
 
-        public void PostFeedBack(Feedback feedback)
+        public Feedback PostFeedBack(Feedback feedback)
         {
             try
             {
                 dbContext.Feedbacks.Add(feedback);
+                return feedback;
             }
             catch (Exception ex)
             {

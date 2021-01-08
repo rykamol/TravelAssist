@@ -1,20 +1,23 @@
 ﻿using TravelAssist.Core.Business_Interface;
 using TravelAssist.Core.Models;
-using TravelAssist.Core.Repository_Interface;
+using TravelAssist.Core.UnitOfWork_Inferface;
 
 namespace TravelAssist.Business.Business
 {
     public class FeedBackBusiness : IFeedBackBusiness
     {
-        private readonly IFeedBackRepository _feedBackRepository;
-        public FeedBackBusiness(IFeedBackRepository _feedBackRepository)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public FeedBackBusiness(IUnitOfWork unitOfWork)
         {
-            this._feedBackRepository = _feedBackRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        public void PostFeedBack(Feedback feedback)
+        public Feedback PostFeedBack(Feedback feedback)
         {
-            _feedBackRepository.PostFeedBack(feedback);
+            var returnFeebBack = _unitOfWork.FeedBackRepository.PostFeedBack(feedback);
+            _unitOfWork.SaveAllAsync();
+            return returnFeebBack;
         }
     }
 }

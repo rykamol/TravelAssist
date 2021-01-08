@@ -4,6 +4,6 @@ namespace TravelAssist.Core.Business_Interface
 {
     public interface IFeedBackBusiness
     {
-        void PostFeedBack(Feedback feedback);
+        Feedback PostFeedBack(Feedback feedback);
     }
 }
