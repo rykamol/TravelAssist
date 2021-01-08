@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using TravelAssist.Core.Models;
 using TravelAssist.Core.Repository_Interface;
 using TravelAssist.Data._Context;
@@ -7,13 +8,14 @@ using TravelAssist.Data.Base_Repository;
 
 namespace TravelAssist.Data.Repository
 {
-    class UserRepository : Repository<User>, IUserRepository
+    public class UserRepository : Repository<User>, IUserRepository
     {
+        public UserRepository(DbContext context) : base(context)
+        {
 
-        public UserRepository(DbContext context) : base(context) { }
+        }
 
         private TravelDbContext dbContext { get { return Context as TravelDbContext; } }
-
 
         public void Register(User user)
         {
@@ -63,7 +65,7 @@ namespace TravelAssist.Data.Repository
 
         public User GetByUserName(string userName)
         {
-            return dbContext.Users.Find(userName);
+            return dbContext.Users.ToList().FirstOrDefault(x => x.Username == userName);
         }
     }
 }

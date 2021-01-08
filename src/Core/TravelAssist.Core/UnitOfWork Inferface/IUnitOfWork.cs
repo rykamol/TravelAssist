@@ -1,10 +1,14 @@
-﻿using TravelAssist.Core.Base_Repository_Interface;
+﻿using System;
+using System.Threading.Tasks;
+using TravelAssist.Core.Repository_Interface;
 
 namespace TravelAssist.Core.UnitOfWork_Inferface
 {
-    public interface IUnitOfWork<T> where T : class
+    public interface IUnitOfWork : IDisposable
     {
-        IRepository<T> Repository { get; }
-        int Save();
+        IUserRepository UserRepository { get; }
+        IFeedBackRepository FeedBackRepository { get; }
+        ISpotRepository SpotRepository { get; }
+        Task<int> SaveAllAsync();
     }
 }

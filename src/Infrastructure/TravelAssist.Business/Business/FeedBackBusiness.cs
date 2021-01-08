@@ -4,7 +4,7 @@ using TravelAssist.Core.Repository_Interface;
 
 namespace TravelAssist.Business.Business
 {
-    class FeedBackBusiness : IFeedBackBusiness
+    public class FeedBackBusiness : IFeedBackBusiness
     {
         private readonly IFeedBackRepository _feedBackRepository;
         public FeedBackBusiness(IFeedBackRepository _feedBackRepository)

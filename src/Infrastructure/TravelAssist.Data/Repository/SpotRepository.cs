@@ -6,7 +6,7 @@ using TravelAssist.Data.Base_Repository;
 
 namespace TravelAssist.Data.Repository
 {
-    class SpotRepository : Repository<Spot>, ISpotRepository
+    public class SpotRepository : Repository<Spot>, ISpotRepository
     {
 
         public SpotRepository(DbContext context) : base(context) { }

@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{348F5037-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{20DE0C88-4884-4499-9E29-FA4F36BD71EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAssist.Core", "src\Core\TravelAssist.Core\TravelAssist.Core.csproj", "{BDFF8262-1764-4D29-BA03-B4C3EE81FE9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAssist.Core", "src\Core\TravelAssist.Core\TravelAssist.Core.csproj", "{BDFF8262-1764-4D29-BA03-B4C3EE81FE9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAssist.Api", "src\TravelAssist.Api\TravelAssist.Api.csproj", "{57238BE4-B366-4A34-829A-054FFE7BEDA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAssist.Api", "src\TravelAssist.Api\TravelAssist.Api.csproj", "{57238BE4-B366-4A34-829A-054FFE7BEDA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAssist.Business", "src\Infrastructure\TravelAssist.Business\TravelAssist.Business.csproj", "{540C2AB4-A3C6-49CA-96D0-4F14B972C2DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAssist.Data", "src\Infrastructure\TravelAssist.Data\TravelAssist.Data.csproj", "{EE39487C-8E4D-4120-AD10-25AF1439887E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAssist.Data", "src\Infrastructure\TravelAssist.Data\TravelAssist.Data.csproj", "{EE39487C-8E4D-4120-AD10-25AF1439887E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAssist.Business", "src\Infrastructure\TravelAssist.Business\TravelAssist.Business.csproj", "{0AF5C311-FEA8-4380-B487-4366D233B92F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{57238BE4-B366-4A34-829A-054FFE7BEDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57238BE4-B366-4A34-829A-054FFE7BEDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57238BE4-B366-4A34-829A-054FFE7BEDA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{540C2AB4-A3C6-49CA-96D0-4F14B972C2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{540C2AB4-A3C6-49CA-96D0-4F14B972C2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{540C2AB4-A3C6-49CA-96D0-4F14B972C2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{540C2AB4-A3C6-49CA-96D0-4F14B972C2DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE39487C-8E4D-4120-AD10-25AF1439887E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE39487C-8E4D-4120-AD10-25AF1439887E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE39487C-8E4D-4120-AD10-25AF1439887E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE39487C-8E4D-4120-AD10-25AF1439887E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF5C311-FEA8-4380-B487-4366D233B92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF5C311-FEA8-4380-B487-4366D233B92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF5C311-FEA8-4380-B487-4366D233B92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF5C311-FEA8-4380-B487-4366D233B92F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,8 +48,8 @@ Global
 		{20DE0C88-4884-4499-9E29-FA4F36BD71EB} = {26535A21-F322-4C70-89EA-A08724746FDD}
 		{BDFF8262-1764-4D29-BA03-B4C3EE81FE9E} = {348F5037-B601-4764-8E81-624ABD2165C7}
 		{57238BE4-B366-4A34-829A-054FFE7BEDA1} = {26535A21-F322-4C70-89EA-A08724746FDD}
-		{540C2AB4-A3C6-49CA-96D0-4F14B972C2DB} = {20DE0C88-4884-4499-9E29-FA4F36BD71EB}
 		{EE39487C-8E4D-4120-AD10-25AF1439887E} = {20DE0C88-4884-4499-9E29-FA4F36BD71EB}
+		{0AF5C311-FEA8-4380-B487-4366D233B92F} = {20DE0C88-4884-4499-9E29-FA4F36BD71EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {659E8FE1-0BFD-4147-A2A7-A3FE8D5EBFFB}

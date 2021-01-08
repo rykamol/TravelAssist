@@ -1,29 +1,36 @@
-﻿using System;
-using TravelAssist.Core.Base_Repository_Interface;
+﻿using System.Threading.Tasks;
+using TravelAssist.Core.Repository_Interface;
 using TravelAssist.Core.UnitOfWork_Inferface;
 using TravelAssist.Data._Context;
-using TravelAssist.Data.Base_Repository;
+using TravelAssist.Data.Repository;
 
 namespace TravelAssist.Data._UnitOfWork
 {
-    public class UnitOfWork<TEntity> : IUnitOfWork<TEntity>, IDisposable where TEntity : class
+    public class UnitOfWork : IUnitOfWork
     {
-
-        private readonly TravelDbContext _context;
-        public UnitOfWork(TravelDbContext context)
+        private TravelDbContext context;
+        public UnitOfWork(TravelDbContext _context)
         {
-            _context = context;
+            context = _context;
+
+            this.UserRepository = new UserRepository(context);
+            this.SpotRepository = new SpotRepository(context);
+            this.FeedBackRepository = new FeedBackRepository(context);
         }
-        public IRepository<TEntity> Repository => new Repository<TEntity>(_context);
 
         public void Dispose()
         {
-            _context?.Dispose();
+            context.Dispose();
         }
 
-        public int Save()
+        public IUserRepository UserRepository { get; }
+        public IFeedBackRepository FeedBackRepository { get; }
+        public ISpotRepository SpotRepository { get; }
+
+
+        public Task<int> SaveAllAsync()
         {
-            return _context.SaveChanges();
+            return context.SaveChangesAsync();
         }
     }
 }

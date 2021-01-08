@@ -1,26 +1,27 @@
 ﻿using TravelAssist.Core.Business_Interface;
 using TravelAssist.Core.Models;
-using TravelAssist.Core.Repository_Interface;
+using TravelAssist.Core.UnitOfWork_Inferface;
 
 namespace TravelAssist.Business.Business
 {
     public class UserBusiness : IUserBusiness
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UserBusiness(IUserRepository userRepository)
+        public UserBusiness(IUnitOfWork unitOfWork)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public void Register(User user)
         {
-            _userRepository.Register(user);
+            _unitOfWork.UserRepository.Register(user);
+            _unitOfWork.SaveAllAsync();
         }
 
         public bool Login(User user)
         {
-            return _userRepository.Login(user);
+            return _unitOfWork.UserRepository.Login(user);
         }
     }
 }

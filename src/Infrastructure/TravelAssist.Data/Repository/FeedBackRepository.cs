@@ -7,7 +7,7 @@ using TravelAssist.Data.Base_Repository;
 
 namespace TravelAssist.Data.Repository
 {
-    class FeedBackRepository : Repository<Feedback>, IFeedBackRepository
+    public class FeedBackRepository : Repository<Feedback>, IFeedBackRepository
     {
         public FeedBackRepository(DbContext context) : base(context) { }
 

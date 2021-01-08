@@ -5,7 +5,7 @@ using TravelAssist.Core.Repository_Interface;
 
 namespace TravelAssist.Business.Business
 {
-    class SpotBusiness : ISpotBusiness
+    public class SpotBusiness : ISpotBusiness
     {
         private readonly ISpotRepository _spotRepository;
 
