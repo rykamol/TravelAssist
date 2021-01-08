@@ -5,5 +5,6 @@ namespace TravelAssist.Core.Business_Interface
 {
     public interface ISpotBusiness : IBusiness<Spot>
     {
+
     }
 }

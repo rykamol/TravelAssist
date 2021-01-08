@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TravelAssist.Core.Business_Interface;
+﻿using TravelAssist.Core.Business_Interface;
 using TravelAssist.Core.Models;
 using TravelAssist.Core.Repository_Interface;
 
@@ -14,29 +13,14 @@ namespace TravelAssist.Business.Business
             _userRepository = userRepository;
         }
 
-        public void Add(User entity)
+        public void Register(User user)
         {
-            _userRepository.Add(entity);
+            _userRepository.Register(user);
         }
 
-        public void Update(User entity)
+        public bool Login(User user)
         {
-            _userRepository.Update(entity);
-        }
-
-        public void Delete(User entity)
-        {
-            _userRepository.Delete(entity);
-        }
-
-        public ICollection<User> GetAll()
-        {
-            return _userRepository.GetAll();
-        }
-
-        public User GetById(int id)
-        {
-            return _userRepository.GetById(id);
+            return _userRepository.Login(user);
         }
     }
 }

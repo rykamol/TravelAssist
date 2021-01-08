@@ -1,10 +1,11 @@
-﻿using TravelAssist.Core.Base_Business_Interface;
-using TravelAssist.Core.Models;
+﻿using TravelAssist.Core.Models;
 
 namespace TravelAssist.Core.Business_Interface
 {
-    public interface IUserBusiness : IBusiness<User>
+    public interface IUserBusiness
     {
+        void Register(User user);
 
+        bool Login(User user);
     }
 }
